@@ -1,0 +1,365 @@
+/* ═══════════════════════════════════════════════════════════════
+   Cyber Security Threat Analytics Dashboard — style.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── IMPORTS ──────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── ROOT VARIABLES ───────────────────────────────────────────── */
+:root {
+  --bg-dark:     #0f1523;
+  --bg-card:     #1a1f35;
+  --bg-card2:    #1e2440;
+  --border:      rgba(79, 142, 247, 0.15);
+  --primary:     #4f8ef7;
+  --danger:      #ef4444;
+  --warning:     #f59e0b;
+  --success:     #10b981;
+  --purple:      #8b5cf6;
+  --teal:        #14b8a6;
+  --text:        #e2e8f0;
+  --muted:       #94a3b8;
+  --radius:      12px;
+  --shadow:      0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── GLOBAL RESETS ────────────────────────────────────────────── */
+html, body, [class*="css"] {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.stApp {
+  background: var(--bg-dark) !important;
+  color: var(--text) !important;
+}
+
+/* ── HIDE STREAMLIT DEFAULTS ──────────────────────────────────── */
+#MainMenu, footer, header { visibility: hidden; }
+.block-container {
+  padding: 1rem 1.5rem 2rem 1.5rem !important;
+  max-width: 100% !important;
+}
+
+/* ── SIDEBAR ──────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+  background: #111827 !important;
+  border-right: 1px solid var(--border) !important;
+  min-width: 220px !important;
+  max-width: 240px !important;
+}
+
+[data-testid="stSidebar"] * { color: var(--text) !important; }
+
+[data-testid="stSidebar"] .stSelectbox > div > div,
+[data-testid="stSidebar"] .stDateInput > div > div {
+  background: #1e2440 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--text) !important;
+}
+
+[data-testid="stSidebar"] .stRadio > div > label {
+  background: transparent !important;
+  color: var(--muted) !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s !important;
+  font-size: 13px !important;
+}
+
+[data-testid="stSidebar"] .stRadio > div > label:hover {
+  background: rgba(79,142,247,0.12) !important;
+  color: var(--primary) !important;
+}
+
+[data-testid="stSidebar"] .stRadio [data-checked="true"] > label,
+[data-testid="stSidebar"] .stRadio > div > label[data-baseweb="radio"] input:checked ~ div {
+  color: var(--primary) !important;
+}
+
+/* ── SIDEBAR LOGO ─────────────────────────────────────────────── */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0 8px 0;
+}
+.logo-icon   { font-size: 32px; }
+.logo-title  { font-size: 15px; font-weight: 700; color: var(--text); }
+.logo-sub    { font-size: 11px; color: var(--muted); }
+
+.sidebar-section {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin: 8px 0 6px 0;
+}
+
+.sidebar-footer {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* ── TOP HEADER ───────────────────────────────────────────────── */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #1a1f35 0%, #1e2440 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.dashboard-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin: 0 !important;
+  letter-spacing: -0.3px;
+}
+
+.dashboard-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 4px var(--success); }
+  50%  { box-shadow: 0 0 12px var(--success); }
+  100% { box-shadow: 0 0 4px var(--success); }
+}
+
+.status-text  { color: var(--success); font-weight: 600; }
+.record-count { color: var(--primary); font-weight: 500; }
+
+/* ── PAGE TITLE ───────────────────────────────────────────────── */
+.page-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+
+/* ── KPI CARDS ────────────────────────────────────────────────── */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 110px;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.kpi-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  flex: 1;
+  padding-right: 8px;
+}
+
+.kpi-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.kpi-value {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.kpi-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.kpi-tag {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* ── CHART CARDS ──────────────────────────────────────────────── */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+
+.chart-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+
+.chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── INSIGHTS BOX ─────────────────────────────────────────────── */
+.insights-box {
+  background: linear-gradient(135deg, #1a1f35 0%, #1e2c50 100%);
+  border: 1px solid rgba(79,142,247,0.25);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+
+.insights-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  margin: 0 0 14px 0 !important;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.insight-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.insight-item strong { color: var(--primary); }
+
+/* ── PLOTLY CHART OVERRIDES ───────────────────────────────────── */
+.js-plotly-plot .plotly .modebar {
+  background: transparent !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+  fill: var(--muted) !important;
+}
+
+/* ── STREAMLIT DATAFRAME ──────────────────────────────────────── */
+[data-testid="stDataFrame"] {
+  background: var(--bg-card) !important;
+  border-radius: 8px !important;
+}
+
+[data-testid="stDataFrame"] table {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+[data-testid="stDataFrame"] th {
+  background: var(--bg-card2) !important;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+[data-testid="stDataFrame"] td {
+  color: var(--text) !important;
+  font-size: 12px !important;
+}
+
+/* ── SELECT BOXES ─────────────────────────────────────────────── */
+.stSelectbox > div > div {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--text) !important;
+}
+
+/* ── DATE INPUT ───────────────────────────────────────────────── */
+.stDateInput input {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--text) !important;
+  font-size: 12px !important;
+}
+
+/* ── HORIZONTAL RULE ──────────────────────────────────────────── */
+hr { border-color: var(--border) !important; }
+
+/* ── SUCCESS / WARNING / INFO ALERTS ─────────────────────────── */
+.stAlert {
+  border-radius: 8px !important;
+  border: 1px solid var(--border) !important;
+  background: var(--bg-card) !important;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .top-header        { flex-direction: column; gap: 10px; }
+  .insights-grid     { grid-template-columns: 1fr; }
+  .dashboard-title   { font-size: 15px !important; }
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
