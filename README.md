@@ -1,6 +1,6 @@
 # 🛡️ Cyber Security Threat Analytics Dashboard
 
-An interactive **Data Analytics Dashboard** built on the **NSL-KDD Network Intrusion Detection dataset**. It transforms raw network connection records into actionable security insights through KPIs, interactive Plotly charts, and a 4-page Streamlit interface.
+An interactive **Data Analytics Dashboard** built using a **Network Intrusion Detection dataset (NSL-KDD based)**. It transforms raw network connection records into actionable security insights through KPIs, interactive Plotly charts, and a 4-page Streamlit interface.
 
 > 📄 **Full project documentation:** [`CyberSecurityDashboard_Documentation.docx`](https://github.com/Nain-007sh/cyber-security-threat-analytics-dashboard/blob/main/CyberSecurityDashboard_Documentation.docx)
 
@@ -31,7 +31,7 @@ The `class` column (`normal` / `anomaly`) already present in the source training
 
 ## 📊 Dataset Information
 
-**Source:** NSL-KDD Network Intrusion Detection dataset (Kaggle)
+**Source:** Network Intrusion Detection dataset (NSL-KDD based) — Kaggle
 
 | Property | Value |
 |---|---|
@@ -43,7 +43,7 @@ The `class` column (`normal` / `anomaly`) already present in the source training
 | Missing values in source | 0 |
 | Duplicates removed | 57 |
 
-> ⚠️ **Honest note:** The NSL-KDD dataset has **no date/timestamp column**. Any chart needing a sequence axis uses `record_index` (row order), clearly labeled throughout. The sidebar **Date Filter is intentionally disabled**. `Test_data.csv` rows are labeled `"unlabeled"` — never guessed — so no fabricated ground truth is introduced.
+> ⚠️ **Honest note:** The underlying network intrusion dataset has **no date/timestamp column**. Any chart needing a sequence axis uses `record_index` (row order), clearly labeled throughout. The sidebar **Date Filter is intentionally disabled**. `Test_data.csv` rows are labeled `"unlabeled"` — never guessed — so no fabricated ground truth is introduced.
 
 ---
 
@@ -108,7 +108,7 @@ All 6 filters affect every KPI card and every chart across all 4 pages simultane
 | Threat Level | `threat_level` | High, Medium, Low |
 | Traffic Category | `traffic_category` | Low Traffic, Medium Traffic, High Traffic |
 | Connection Flag | `flag` | SF, S0, REJ, RSTO, … |
-| Date Filter | — | **Disabled** — no timestamp in NSL-KDD |
+| Date Filter | — | **Disabled** — no timestamp available in source dataset |
 
 ---
 
@@ -132,8 +132,8 @@ All 6 filters affect every KPI card and every chart across all 4 pages simultane
 CyberSecurityDashboard/
 │
 ├── data/
-│   ├── Train_data.csv                           # Raw NSL-KDD training set (25,192 rows)
-│   ├── Test_data.csv                            # Raw NSL-KDD test set (22,544 rows)
+│   ├── Train_data.csv                           # Raw network intrusion training set (25,192 rows)
+│   ├── Test_data.csv                            # Raw network intrusion test set (22,544 rows)
 │   ├── cleaned_data.csv                         # Cleaned + engineered output (47,679 rows, 49 cols)
 │   └── quality_log.json                         # Cleaning/outlier audit log
 │
@@ -250,4 +250,4 @@ https://github.com/Nain-007sh
 
 ---
 
-*Dataset: [Kaggle — Network Intrusion Detection](https://www.kaggle.com/datasets/sampadab17/network-intrusion-detection?utm_source=chatgpt.com)*
+*Dataset: Network Intrusion Detection Dataset (NSL-KDD based) — Kaggle*
