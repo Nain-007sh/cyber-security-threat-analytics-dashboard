@@ -239,13 +239,5 @@ Full project documentation is available in  **[`CyberSecurityDashboard_Documenta
 
 ## 📷 Screenshots
 
-*Add dashboard screenshots here after running the app locally (e.g. `assets/page1_overview.png`).*
 
 ---
-
-## ⚠️ Documented Assumptions
-
-1. **No real date/time field exists in NSL-KDD** — `record_index` (row order) is used as a sequence proxy for trend charts and is explicitly labeled as such everywhere. The Date Filter is disabled with a clear note.
-2. **`Test_data.csv` has no `class` column** — these rows are labeled `"unlabeled"`, not assigned fabricated attack/normal labels.
-3. **Traffic category thresholds** are data-driven terciles (33rd/66th percentile of `total_traffic`) — not arbitrary fixed cutoffs.
-4. **Outlier treatment** uses IQR × 3 (not × 1.5) to preserve more legitimate extreme-value records typical in network traffic data.
