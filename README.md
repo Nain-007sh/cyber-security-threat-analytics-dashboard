@@ -2,7 +2,7 @@
 
 An interactive **Data Analytics Dashboard** built on the  **NSL-KDD Network Intrusion Detection dataset** . It transforms raw network connection records into actionable security insights through KPIs, interactive Plotly charts, and a 4-page Streamlit interface.
 
-> 📄 **Full project documentation:** [`CyberSecurityDashboard_Documentation.docx`](https://claude.ai/chat/CyberSecurityDashboard_Documentation.docx)
+> 📄 **Full project documentation:** [`CyberSecurityDashboard_Documentation.docx`](https://github.com/Nain-007sh/cyber-security-threat-analytics-dashboard/blob/main/CyberSecurityDashboard_Documentation.docx)
 
 ---
 
@@ -225,7 +225,7 @@ CyberSecurityDashboard/
 
 ## 📄 Documentation
 
-Full project documentation is available in  **[`CyberSecurityDashboard_Documentation.docx`](https://claude.ai/chat/CyberSecurityDashboard_Documentation.docx)** , covering:
+Full project documentation is available in  **[`CyberSecurityDashboard_Documentation.docx`](https://github.com/Nain-007sh/cyber-security-threat-analytics-dashboard/blob/main/CyberSecurityDashboard_Documentation.docx)** , covering:
 
 * Complete data pipeline walkthrough
 * All KPI formulas and definitions
