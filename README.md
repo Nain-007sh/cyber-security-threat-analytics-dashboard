@@ -239,3 +239,11 @@ Full project documentation is available in **[`CyberSecurityDashboard_Documentat
 ![Executive Overview — Cyber Security Threat Analytics Dashboard](assets/page1_overview.png)
 
 ---
+## Author
+
+**Muhammad Husnain Raheem**
+
+AI Enthusiast | Data Analyst | Python | SQL | Data Visualization | Analytics & Innovation 
+
+GitHub:
+https://github.com/Nain-007sh
