@@ -247,3 +247,7 @@ AI Enthusiast | Data Analyst | Python | SQL | Data Visualization | Analytics & I
 
 GitHub:
 https://github.com/Nain-007sh
+
+---
+
+*Dataset: [Kaggle — Network Intrusion Detection](https://www.kaggle.com/datasets/sampadab17/network-intrusion-detection?utm_source=chatgpt.com)*
